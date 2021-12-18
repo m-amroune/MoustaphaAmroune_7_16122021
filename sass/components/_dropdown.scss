@@ -1,0 +1,63 @@
+.dropdowns {
+  display: flex;
+  margin-top: 10px;
+
+  & input {
+    outline: none;
+    height: 69px;
+    width: 170px;
+  }
+
+  & input::placeholder {
+    padding-left: 10px;
+  }
+}
+
+.dropdown {
+  width: 170px;
+  margin-right: 15px;
+  position: relative;
+
+  span {
+    position: absolute;
+    display: block;
+    left: 140px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+  }
+}
+
+.dropdown-ingredients {
+  background-color: #3282f7;
+  width: 170px;
+  height: 69px;
+}
+.dropdown-ingredients::placeholder {
+  color: #fff;
+  font-size: 18px;
+}
+
+.dropdown-appareil {
+  background-color: #68d9a4;
+  width: 170px;
+  height: 69px;
+}
+.dropdown-appareil::placeholder {
+  color: #fff;
+  font-size: 18px;
+}
+
+.dropdown-ustensiles {
+  background-color: #ed6454;
+  width: 170px;
+  height: 69px;
+}
+.dropdown-ustensiles::placeholder {
+  color: #fff;
+  font-size: 18px;
+}

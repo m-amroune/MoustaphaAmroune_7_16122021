@@ -1,0 +1,20 @@
+{
+  "name": "moustaphaamroune_7_16122021",
+  "version": "1.0.0",
+  "description": "Projet 7  : Développez un algorithme de recherche en JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-amroune/MoustaphaAmroune_7_16122021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-amroune/MoustaphaAmroune_7_16122021/issues"
+  },
+  "homepage": "https://github.com/m-amroune/MoustaphaAmroune_7_16122021#readme"
+}

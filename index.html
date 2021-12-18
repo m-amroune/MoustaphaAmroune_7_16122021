@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les petits plats</title>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- HEADER -->
 
-    <header>
-        <a>
-            <img src="" alt="logo Les petits plats">
+    <header class="header">
+        <a class="header-link">
+            <img src="./img/logo.png" alt="logo Les petits plats">
             <h1 class="header-title">Les petits plats</h1>
         </a>
     </header>
@@ -23,36 +25,37 @@
     <!--  MAIN -->
 
     <main>
-        <header>
-            <!--  SEARCHBAR -->
-            <form>
-                <input type="text" placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette">
+        <header class="main-header">
+            <!--  SEARCH BAR -->
+            <form class="search-form">
+                <input class="search-bar" type="text"
+                    placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette">
                 <button>
-                    <span><i class="fas fa-search"></i></span>
+                    <span class="fas fa-search"></span>
                 </button>
 
             </form>
 
             <!-- DROPDOWNS -->
-            <form>
-                <div>
-                    <input type="text" placeholder="Ingrédient">
+            <form class="dropdowns">
+                <div class="dropdown">
+                    <input class="dropdown-ingredients" type="text" placeholder="Ingrédients">
                     <span class="fas fa-chevron-down"></span>
                     <div>
                         <ul></ul>
                     </div>
                 </div>
 
-                <div>
-                    <input type="text" placeholder="Appareil">
+                <div class="dropdown">
+                    <input class="dropdown-appareil" type="text" placeholder="Appareil">
                     <span class="fas fa-chevron-down"></span>
                     <div>
                         <ul></ul>
                     </div>
                 </div>
 
-                <div>
-                    <input type="text" placeholder="Ustensiles">
+                <div class="dropdown">
+                    <input class="dropdown-ustensiles" type="text" placeholder="Ustensiles">
                     <span class="fas fa-chevron-down"></span>
                     <div>
                         <ul></ul>
