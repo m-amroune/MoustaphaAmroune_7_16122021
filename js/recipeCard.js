@@ -11,13 +11,13 @@ export class RecipeCard {
     const cardImg = document.createElement("img");
     const cardName = document.createElement("h3");
     const duration = document.createElement("p");
-    const cardIngredientsList = document.createElement("ul");
+    const cardIngredients = document.createElement("ul");
     const cardInstructions = document.createElement("p");
 
     cardImg.classList.add("card-img");
     cardName.classList.add("card-name");
     duration.classList.add("duration");
-    cardIngredientsList.classList.add("ingredients-list");
+    cardIngredients.classList.add("ingredients-list");
     cardInstructions.classList.add("card-instructions");
 
     cardImg.setAttribute("src", "../img/placeholder.png");
@@ -29,9 +29,21 @@ export class RecipeCard {
       cardImg,
       cardName,
       duration,
-      cardIngredientsList,
+      cardIngredients,
       cardInstructions
     );
+
+    for (let ingredient of this.ingredients) {
+      const cardIngredientsList = document.createElement("li");
+      cardIngredients.appendChild(cardIngredientsList);
+      if (ingredient.quantity === undefined) {
+        cardIngredientsList.innerHTML = `<span> ${ingredient.ingredient}`;
+      } else if (ingredient.unit === undefined) {
+        cardIngredientsList.innerHTML = `<span> ${ingredient.ingredient} : </span> ${ingredient.quantity}`;
+      } else {
+        cardIngredientsList.innerHTML = `<span> ${ingredient.ingredient} : </span> ${ingredient.quantity} ${ingredient.unit}`;
+      }
+    }
 
     return cardArticle;
   }
