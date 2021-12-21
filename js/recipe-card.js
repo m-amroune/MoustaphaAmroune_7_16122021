@@ -20,7 +20,7 @@ export class RecipeCard {
     cardIngredients.classList.add("ingredients-list");
     cardInstructions.classList.add("card-instructions");
 
-    cardImg.setAttribute("src", "../img/placeholder.png");
+    cardImg.setAttribute("src", "../img/placeholder.jpg");
     cardName.textContent = `${this.name}`;
     duration.innerHTML = `<i class="far fa-clock"></i> ${this.time} min`;
     cardInstructions.textContent = `${this.description}`;
