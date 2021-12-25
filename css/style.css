@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  width: 1440px;
+  max-width: 1440px;
   box-sizing: border-box;
   font-family: "lato";
 }
@@ -10,9 +10,14 @@ input {
   border: none;
 }
 
+li {
+  list-style: none;
+}
+
 .header {
   margin-bottom: 15px;
   margin-top: 30px;
+  max-width: 1240px;
 }
 
 .header-link {
@@ -32,14 +37,30 @@ img {
   height: 46px;
 }
 
+.main-header {
+  display: flex;
+  flex-direction: column;
+}
+
 .dropdowns {
   display: flex;
   margin-top: 10px;
+}
+@media (max-width: 680px) {
+  .dropdowns {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .dropdowns input {
   outline: none;
   height: 69px;
   width: 170px;
+}
+@media (max-width: 680px) {
+  .dropdowns input {
+    width: 100%;
+  }
 }
 .dropdowns input::placeholder {
   padding-left: 10px;
@@ -50,17 +71,13 @@ img {
   margin-right: 15px;
   position: relative;
 }
-.dropdown span {
-  position: absolute;
-  display: block;
-  left: 140px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  width: 20px;
+@media (max-width: 680px) {
+  .dropdown {
+    display: block;
+    margin-bottom: 10px;
+    min-width: 100%;
+    margin-left: 15px;
+  }
 }
 
 .dropdown-ingredients {
@@ -91,7 +108,9 @@ img {
 }
 
 .search-form {
+  display: flex;
   position: relative;
+  max-width: 1240px;
 }
 
 .search-bar {
@@ -107,10 +126,8 @@ img {
 }
 
 button {
-  position: absolute;
-  width: 50px;
   border: none;
-  top: 0;
+  padding: 10px;
   height: 69px;
   background: #e7e7e7;
   cursor: pointer;
@@ -122,11 +139,115 @@ button span {
   font-size: 32px;
 }
 
+.btn-dropdown {
+  position: absolute;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+}
+.btn-dropdown span {
+  color: #fff;
+}
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+}
+@media (max-width: 1430px) {
+  section {
+    justify-content: center;
+  }
+}
+
+article {
+  width: 380px;
+  height: 364px;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  border-radius: 5px;
+  background-color: #e7e7e7;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "img img img img" "title title title duration" "ingredients ingredients instructions instructions";
+}
+@media (max-width: 795px) {
+  article {
+    margin-right: 0;
+  }
+}
+article .card-img {
+  width: 100%;
+  height: 178px;
+  grid-area: img;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card-name {
+  grid-area: title;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 20px 0 0 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.duration {
+  font-weight: bold;
+  grid-area: duration;
+  text-align: right;
+  padding: 20px 20px 0 0;
+  white-space: nowrap;
+}
+.duration i {
+  width: 20px;
+  height: 20px;
+}
+
+.ingredients-list {
+  grid-area: ingredients;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 0 0 19px 20px;
+  width: 171px;
+}
+.ingredients-list li span {
+  font-weight: bold;
+}
+
+.card-instructions {
+  height: 109px;
+  max-width: 171px;
+  padding: 0 0 19px 20px;
+  margin-bottom: 19px;
+  grid-area: instructions;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 16px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+}
+
 .main-header {
   width: 100%;
   max-width: 1440px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 40px 0;
+}
+
+body {
+  margin-left: 100px;
+  padding: 10px;
+}
+@media (max-width: 1200px) {
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

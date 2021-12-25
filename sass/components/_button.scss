@@ -1,16 +1,26 @@
 button {
-  position: absolute;
-  width: 50px;
   border: none;
-  top: 0;
+  padding: 10px;
   height: 69px;
   background: #e7e7e7;
   cursor: pointer;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
+  @media (max-width: 680px) {
+  }
 
   & span {
     width: 32px;
     font-size: 32px;
+  }
+}
+
+.btn-dropdown {
+  position: absolute;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+
+  & span {
+    color: #fff;
   }
 }

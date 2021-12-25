@@ -1,6 +1,5 @@
 import { RecipeCard } from "./recipe-card.js";
 import { recipes } from "./recipes.js";
-
 export class RecipesPage {
   constructor() {
     this.recipesContainer = document.querySelector("section");

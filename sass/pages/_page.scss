@@ -2,5 +2,17 @@
   width: 100%;
   max-width: 1440px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 40px 0;
+}
+body {
+  margin-left: 100px;
+
+  @media (max-width: 1200px) {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  padding: 10px;
 }

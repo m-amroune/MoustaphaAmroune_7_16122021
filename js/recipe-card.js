@@ -11,20 +11,23 @@ export class RecipeCard {
     const cardImg = document.createElement("img");
     const cardName = document.createElement("h3");
     const duration = document.createElement("p");
+    const cardDescription = document.createElement("div");
     const cardIngredients = document.createElement("ul");
     const cardInstructions = document.createElement("p");
 
     cardImg.classList.add("card-img");
     cardName.classList.add("card-name");
     duration.classList.add("duration");
+    // cardDescription.classList.add("card-description");
     cardIngredients.classList.add("ingredients-list");
     cardInstructions.classList.add("card-instructions");
 
-    cardImg.setAttribute("src", "../img/placeholder.jpg");
+    cardImg.setAttribute("src", "./img/placeholder.jpg");
     cardName.textContent = `${this.name}`;
     duration.innerHTML = `<i class="far fa-clock"></i> ${this.time} min`;
     cardInstructions.textContent = `${this.description}`;
 
+    // cardDescription.append();
     cardArticle.append(
       cardImg,
       cardName,
