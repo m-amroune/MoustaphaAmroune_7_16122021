@@ -6,12 +6,16 @@ button {
   cursor: pointer;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
-  @media (max-width: 680px) {
-  }
 
   & span {
     width: 32px;
     font-size: 32px;
+  }
+}
+
+.search-form button {
+  @media (max-width: 680px) {
+    display: none;
   }
 }
 
@@ -22,5 +26,6 @@ button {
 
   & span {
     color: #fff;
+    font-size: 16px;
   }
 }

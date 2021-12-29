@@ -4,6 +4,17 @@ export class RecipesPage {
   constructor() {
     this.recipesContainer = document.querySelector("section");
     this.cards = [];
+    this.searchBar = document.querySelector(".search-bar");
+
+    this.searchBar.addEventListener("keyup", (event) => {
+      const enteredLetters = event.target.value;
+      if (enteredLetters < 3) {
+        this.displayRecipes();
+      } else {
+        // this.removeAllRecipes();
+        // this.filteredRecipes();
+      }
+    });
   }
 
   displayRecipes() {
@@ -20,5 +31,15 @@ export class RecipesPage {
     this.cards.forEach((recipe) => {
       this.recipesContainer.appendChild(recipe.displayCard());
     });
+  }
+
+  filteredRecipes() {
+    this.displayRecipes(this.enteredLetters);
+  }
+  removeAllRecipes() {
+    const allRecipes = document.querySelectorAll("article");
+    for (let recipes of allRecipes) {
+      this.recipesContainer.removeChild(recipes);
+    }
   }
 }
