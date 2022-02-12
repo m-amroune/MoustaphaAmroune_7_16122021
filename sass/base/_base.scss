@@ -12,4 +12,12 @@ input {
 
 li {
   list-style: none;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.main-header {
+  height: 200px;
 }

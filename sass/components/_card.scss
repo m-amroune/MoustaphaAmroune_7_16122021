@@ -1,6 +1,7 @@
 section {
   display: flex;
   flex-flow: row wrap;
+  z-index: 1;
 
   @media (max-width: 1430px) {
     justify-content: center;

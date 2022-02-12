@@ -12,6 +12,14 @@ input {
 
 li {
   list-style: none;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.main-header {
+  height: 200px;
 }
 
 .header {
@@ -57,6 +65,7 @@ img {
   height: 69px;
   width: 170px;
   border-radius: 5px;
+  color: #fff;
 }
 @media (max-width: 680px) {
   .dropdowns input {
@@ -68,9 +77,9 @@ img {
 }
 
 .dropdown {
-  width: 170px;
   margin-right: 15px;
   position: relative;
+  z-index: 10;
 }
 @media (max-width: 680px) {
   .dropdown {
@@ -108,6 +117,30 @@ img {
   font-size: 18px;
 }
 
+.list-ingredients.show-list {
+  background-color: #3282f7;
+  color: #fff;
+  padding-left: 26px;
+}
+
+.list-appliances.show-list {
+  background-color: #68d9a4;
+  color: #fff;
+  padding-left: 26px;
+}
+
+.list-ustensils.show-list {
+  background-color: #ed6454;
+  color: #fff;
+  padding-left: 26px;
+}
+
+.show-list {
+  line-height: 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .search-form {
   display: flex;
   position: relative;
@@ -127,6 +160,7 @@ img {
 }
 
 button {
+  z-index: 20;
   border: none;
   padding: 10px;
   height: 69px;
@@ -159,6 +193,7 @@ button span {
 section {
   display: flex;
   flex-flow: row wrap;
+  z-index: 1;
 }
 @media (max-width: 1430px) {
   section {

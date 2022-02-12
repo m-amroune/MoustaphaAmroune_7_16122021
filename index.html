@@ -28,8 +28,7 @@
         <header class="main-header">
             <!--  SEARCH BAR -->
             <form class="search-form">
-                <input class="search-bar" type="text"
-                    placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette">
+                <input class="search-bar" type="text" placeholder="Rechercher une recette">
                 <button>
                     <span class="fas fa-search"></span>
                 </button>
@@ -38,33 +37,38 @@
 
             <!-- DROPDOWNS -->
             <form class="dropdowns">
-                <div class="dropdown">
-                    <input class="dropdown-ingredients" type="text" placeholder="Ingrédients">
-                    <button class="btn-dropdown">
+                <div class="dropdown" id="ingredients-dropdown">
+                    <input class="dropdown-ingredients ingredients-input  dropdown-width" data-type="ingredients"
+                        type="text" placeholder="Ingrédients">
+                    <button class="btn-dropdown" data-type="ingredients" type="button">
                         <span class="fas fa-chevron-down"></span>
                     </button>
                     <div>
-                        <ul class="list-ingredients list" id="ingredients"></ul>
+                        <ul class="list-ingredients ingredients-dropdown " id="ingredients" data-type="ingredients">
+                        </ul>
+
                     </div>
                 </div>
 
-                <div class="dropdown">
-                    <input class="dropdown-appareil" type="text" placeholder="Appareil">
-                    <button class="btn-dropdown">
+                <div class="dropdown " id="appliances-dropdown">
+                    <input class="dropdown-appareil appliances-input dropdown-width" data-type="appliances" type="text"
+                        placeholder="Appareil">
+                    <button class="btn-dropdown" data-type="appliances" type="button">
                         <span class="fas fa-chevron-down"></span>
                     </button>
                     <div>
-                        <ul class="list-appliances list" id="appliances"></ul>
+                        <ul class="list-appliances appliances-dropdown " id="appliances" data-type="appliances"></ul>
                     </div>
                 </div>
 
-                <div class="dropdown">
-                    <input class="dropdown-ustensiles" type="text" placeholder="Ustensiles">
-                    <button class="btn-dropdown">
+                <div class="dropdown" id="ustensils-dropdown">
+                    <input class="dropdown-ustensiles ustensils-input dropdown-width" data-type="ustensils" type="text"
+                        placeholder="Ustensiles">
+                    <button class="btn-dropdown" data-type="ustensils" type="button">
                         <span class="fas fa-chevron-down"></span>
                     </button>
                     <div>
-                        <ul class="list-ustensils list" id="ustensils"></ul>
+                        <ul class="list-ustensils ustensils-dropdown " id="ustensils" data-type="ustensils" </ul>
                     </div>
                 </div>
             </form>

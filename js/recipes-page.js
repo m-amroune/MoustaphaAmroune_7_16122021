@@ -5,14 +5,10 @@ export class RecipesPage {
     this.recipesContainer = document.querySelector("section");
     this.cards = [];
     this.allIngredients = [];
-    console.log(this.allIngredients);
     this.allAppliances = [];
-    console.log(this.allAppliances);
     this.allUstensils = [];
-    console.log(this.allUstensils);
 
     this.listIngredients = document.querySelector(".list-ingredients");
-    console.log(this.cards);
     this.searchBar = document.querySelector(".search-bar");
     this.dropdownContent(this.type);
 
@@ -31,7 +27,30 @@ export class RecipesPage {
         this.newDisplayRecipes(this.filteredRecipes(this.enteredLetters));
       }
     });
+    // Event for open dropdowns tags
+    this.DropdownsEvents = document
+      .querySelectorAll(".btn-dropdown")
+      .forEach((element) => {
+        const type = element.dataset.type;
+        const dropdown = document.querySelector(`.${type}-dropdown`);
+        console.log(dropdown);
+        dropdown.style.display = "none";
+        element.addEventListener("click", () => {
+          if (dropdown.classList.contains("show-list")) {
+            this.smallInput();
+            dropdown.style.display = "none";
+            dropdown.classList.remove("show-list");
+            dropdown.style.display = "none";
+          } else {
+            this.closeDropdowns();
+            this.largeInput();
+            dropdown.style.display = "grid";
+            dropdown.classList.add("show-list");
+          }
+        });
+      });
   }
+
   getCreateCards() {
     for (let recipe of recipes) {
       let card = new RecipeCard(
@@ -85,14 +104,17 @@ export class RecipesPage {
       if (type === this.ingredients) {
         recipe.ingredients.forEach((ingredient) => {
           this.allIngredients.push(ingredient.ingredient);
+          this.allIngredients = Array.from(new Set(this.allIngredients));
         });
       }
       if (type === this.appliance) {
         this.allAppliances.push(recipe.appliance);
+        this.allAppliances = Array.from(new Set(this.allAppliances));
       }
       if (type === this.ustensils) {
         recipe.ustensils.forEach((ustensil) => {
           this.allUstensils.push(ustensil);
+          this.allUstensils = Array.from(new Set(this.allUstensils));
         });
       }
     });
@@ -101,8 +123,33 @@ export class RecipesPage {
   displayDropdownContent(array, id) {
     let ul = document.getElementById(id);
     array.forEach((element) => {
-      ul.innerHTML += `
-      <li class="tags-dropdown">${element}</li>`;
+      const dropdownTags = document.createElement("li");
+      dropdownTags.textContent = `${element}`;
+      dropdownTags.classList.add("tags");
+      ul.appendChild(dropdownTags);
+    });
+  }
+
+  closeDropdowns() {
+    const openDropdowns = document.querySelectorAll(".show-list");
+    openDropdowns.forEach((dropdown) => {
+      dropdown.classList.remove("show-list");
+    });
+  }
+
+  largeInput() {
+    document.querySelectorAll(".dropdown-width").forEach((element) => {
+      const type = element.dataset.type;
+      const input = document.querySelector(`.${type}-input`);
+      input.style.width = "600px";
+      input.style.borderRadius = "0";
+    });
+  }
+  smallInput() {
+    document.querySelectorAll(".dropdown-width").forEach((element) => {
+      const type = element.dataset.type;
+      const input = document.querySelector(`.${type}-input`);
+      input.style.width = "170px";
     });
   }
 }

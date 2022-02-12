@@ -16,7 +16,7 @@ export const recipes = [
       {
         ingredient: "Crème de coco",
         quantity: 2,
-        unit: "cuillères à soupe",
+        unit: "cuillère à soupe",
       },
       {
         ingredient: "Sucre",
@@ -102,7 +102,7 @@ export const recipes = [
       {
         ingredient: "Huile d'olive",
         quantity: 1,
-        unit: "cuillères à soupe",
+        unit: "cuillère à soupe",
       },
     ],
     time: 80,
@@ -172,7 +172,7 @@ export const recipes = [
       {
         ingredient: "Crème fraiche",
         quantity: 2,
-        unit: "cuillères à soupe",
+        unit: "cuillère à soupe",
       },
       {
         ingredient: "gruyère râpé",
@@ -182,7 +182,7 @@ export const recipes = [
       {
         ingredient: "Moutarde de Dijon",
         quantity: 1,
-        unite: "cuillères à soupe",
+        unite: "cuillère à soupe",
       },
     ],
     time: 45,
@@ -766,7 +766,7 @@ export const recipes = [
     time: 30,
     description:
       "Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.",
-    appliance: "Casserolle.",
+    appliance: "Casserole",
     ustensils: ["Cuillère en bois", "louche", "couteau"],
   },
   {
@@ -986,7 +986,7 @@ export const recipes = [
     time: 15,
     description:
       "Faire fondre l'oseille avec du beurre demi sel, ajouter un litre d'eau. Ajouter les vermicelles. Laisser cuire. une foit prêt, sortir du feu et après 5 minutes ajouter le jaune d'oeuf et la crême fraîche",
-    appliance: "Casserolle",
+    appliance: "Casserole",
     ustensils: ["couteau", "cuillère en bois"],
   },
   {
@@ -1023,7 +1023,7 @@ export const recipes = [
     description:
       "Emincer les blanc de poireaux et les faire chauffer dans 25 grammes de beurre. AJouter les pommes de terres coupées en morceaux. Ajouter l'eau et laisser mijoter pour 45 minutes. Chauffer l'oseille avec le beurre restant puis incorporer le tout. Mixez. Ajoutez la crème. Bon appetit.",
     appliance: "Mixer",
-    ustensils: ["casserolle", "couteau"],
+    ustensils: ["casserole", "couteau"],
   },
   {
     id: 29,
@@ -1081,7 +1081,7 @@ export const recipes = [
     description:
       "Mettre tous les ingrédients dans une cocotte. ajouter de l'eau pour recouvrir l'ensemble et laisser cuirre à petit feur pour 1 heure. Passer au mixer. Salez, poivrez. C'est prêt",
     appliance: "Mixer",
-    ustensils: ["casserolle", "cuillère en bois"],
+    ustensils: ["casserole", "cuillère en bois"],
   },
   {
     id: 31,
@@ -1461,7 +1461,7 @@ export const recipes = [
     time: 20,
     description:
       "Séparer les blancs d'oeufs. Faire fondre le chocolat au bain marie. Ajouter les jaunes et le sucre au chocolat hors du feu. Battre les blancs en neige. Ajouter les blancs au mélange de chocolat. Mélangez délicatement avec une spatule. Servir dans un plat ou dans des verres. Mettre au frais",
-    appliance: "Casserolle",
+    appliance: "Casserole",
     ustensils: ["fouet", "spatule", "verres"],
   },
   {
@@ -1562,7 +1562,7 @@ export const recipes = [
     time: 15,
     description:
       "Mélanger la farine et le beurre fondu en ajoutant le lait peu à peu. Ajouter du sucre après la cuisson. Bien mélanger. Ajouter le chocolat en morceaux et laisser chauffer 8 minutes en mélangeant avec une cuillère en bois. Mettre dans des verres",
-    appliance: "Casserolle",
+    appliance: "Casserole",
     ustensils: ["cuillère en bois"],
   },
   {
@@ -1593,7 +1593,7 @@ export const recipes = [
     time: 30,
     description:
       "Faire bouillir le lait ( on peut y ajouter de l'essence de vanille. Battre les oeufs et le sucre, ajouter la farine puis finalement ajouter le lait chaud. Remettre à feu doux pour faire épaissir en remuant pendant 5 à 10 minutes.",
-    appliance: "Casserolle",
+    appliance: "Casserole",
     ustensils: ["fouet", "saladier"],
   },
   {
