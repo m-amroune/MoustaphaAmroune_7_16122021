@@ -37,38 +37,43 @@
 
             <!-- DROPDOWNS -->
             <form class="dropdowns">
-                <div class="dropdown" id="ingredients-dropdown">
-                    <input class="dropdown-ingredients ingredients-input  dropdown-width" data-type="ingredients"
-                        type="text" placeholder="Ingrédients">
+                <div class="dropdown " id="ingredients-dropdown">
+                    <input
+                        class=" dropdown-input  dropdown-ingredients ingredients-input dropdown-search  dropdown-width"
+                        data-type="ingredients" type="text" placeholder="Ingrédients">
                     <button class="btn-dropdown" data-type="ingredients" type="button">
                         <span class="fas fa-chevron-down"></span>
                     </button>
-                    <div>
-                        <ul class="list-ingredients ingredients-dropdown " id="ingredients" data-type="ingredients">
+                    <div class="dropdown-tags">
+                        <ul class="list-ingredients list-tags ingredients-dropdown " id="ingredients"
+                            data-type="ingredients">
                         </ul>
 
                     </div>
                 </div>
 
                 <div class="dropdown " id="appliances-dropdown">
-                    <input class="dropdown-appareil appliances-input dropdown-width" data-type="appliances" type="text"
-                        placeholder="Appareil">
+                    <input class=" dropdown-input  dropdown-appareil appliances-input dropdown-search dropdown-width"
+                        data-type="appliances" type="text" placeholder="Appareil">
                     <button class="btn-dropdown" data-type="appliances" type="button">
                         <span class="fas fa-chevron-down"></span>
                     </button>
-                    <div>
-                        <ul class="list-appliances appliances-dropdown " id="appliances" data-type="appliances"></ul>
+                    <div class="dropdown-tags">
+                        <ul class="list-appliances list-tags appliances-dropdown " id="appliances"
+                            data-type="appliances"></ul>
                     </div>
                 </div>
 
                 <div class="dropdown" id="ustensils-dropdown">
-                    <input class="dropdown-ustensiles ustensils-input dropdown-width" data-type="ustensils" type="text"
-                        placeholder="Ustensiles">
+                    <input class=" dropdown-input  dropdown-ustensiles ustensils-input dropdown-search dropdown-width"
+                        data-type="ustensils" type="text" placeholder="Ustensiles">
                     <button class="btn-dropdown" data-type="ustensils" type="button">
                         <span class="fas fa-chevron-down"></span>
                     </button>
-                    <div>
-                        <ul class="list-ustensils ustensils-dropdown " id="ustensils" data-type="ustensils" </ul>
+                    <div class="dropdown-tags">
+                        <ul class="list-ustensils list-tags ustensils-dropdown " id="ustensils" data-type="ustensils">
+                        </ul>
+
                     </div>
                 </div>
             </form>
@@ -80,6 +85,8 @@
             <h2 class="sr-only">Recettes</h2>
         </section>
     </main>
+
+
 
     <script type="module" src="js/index.js"></script>
 </body>

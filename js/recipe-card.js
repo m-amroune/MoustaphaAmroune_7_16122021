@@ -1,9 +1,11 @@
 export class RecipeCard {
-  constructor(name, time, ingredients, description) {
+  constructor(name, time, ingredients, description, appliance, ustensils) {
     this.name = name;
     this.time = time;
     this.ingredients = ingredients;
     this.description = description;
+    this.appliance = appliance;
+    this.ustensils = ustensils;
   }
 
   displayCard() {

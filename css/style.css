@@ -22,6 +22,10 @@ li {
   height: 200px;
 }
 
+.dropdown-tags {
+  display: none;
+}
+
 .header {
   margin-bottom: 15px;
   margin-top: 30px;
@@ -117,19 +121,19 @@ img {
   font-size: 18px;
 }
 
-.list-ingredients.show-list {
+.list-ingredients {
   background-color: #3282f7;
   color: #fff;
   padding-left: 26px;
 }
 
-.list-appliances.show-list {
+.list-appliances {
   background-color: #68d9a4;
   color: #fff;
   padding-left: 26px;
 }
 
-.list-ustensils.show-list {
+.list-ustensils {
   background-color: #ed6454;
   color: #fff;
   padding-left: 26px;
@@ -139,6 +143,10 @@ img {
   line-height: 1.6rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.dropdown-tags {
+  color: #fff;
 }
 
 .search-form {

@@ -32,7 +32,7 @@ export const recipes = [
     description:
       "Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée",
     appliance: "Blender",
-    ustensils: ["cuillère à Soupe", "verres", "presse citron"],
+    ustensils: ["cuillère à soupe", "verres", "presse citron"],
   },
   {
     id: 2,
@@ -175,7 +175,7 @@ export const recipes = [
         unit: "cuillère à soupe",
       },
       {
-        ingredient: "gruyère râpé",
+        ingredient: "Gruyère râpé",
         quantity: 100,
         unit: "grammes",
       },
@@ -226,7 +226,7 @@ export const recipes = [
     ],
     time: 50,
     description:
-      "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraiche. Laisser cuire au four pendant 30 minutes",
+      "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crème fraiche. Laisser cuire au four pendant 30 minutes",
     appliance: "Four",
     ustensils: ["moule à tarte", "saladier", "fourchette"],
   },
@@ -261,9 +261,9 @@ export const recipes = [
     ],
     time: 50,
     description:
-      "Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
+      "Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crème liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
     appliance: "Four",
-    ustensils: ["moule à tartelettes (6)", "casserolle"],
+    ustensils: ["moule à tartelettes (6)", "casserole"],
   },
   {
     id: 8,
@@ -295,7 +295,7 @@ export const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "farine",
+        ingredient: "Farine",
         quantity: 90,
         unit: "grammes",
       },
@@ -304,7 +304,7 @@ export const recipes = [
     description:
       "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
     appliance: "Four",
-    ustensils: ["moule à gateaux", "casserolle"],
+    ustensils: ["moule à gateaux", "casserole"],
   },
   {
     id: 9,
@@ -373,7 +373,7 @@ export const recipes = [
     description:
       "Commencer par cuire les pommes de terre dans l'eau bouillante. Puis epluchez les et coupez les en rondelles. Emincer les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en en morceaux ainsi que les pommes de terres. Salez, poivrez à votre gout ( et celui de vos convives ) Laissez cuisiner durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le rebelochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
     appliance: "Four",
-    ustensils: ["plat à gratin", "couteau", "Économe"],
+    ustensils: ["plat à gratin", "couteau", "économe"],
   },
   {
     id: 11,
@@ -442,7 +442,7 @@ export const recipes = [
     ],
     time: 40,
     description:
-      "Éplucher les fruits et les couper en morceaux, les mettre dans une casserolle en ajoutant l'eau et le sucre vanillé. Laisser cuire 15 minutes en remuant régulièrement.",
+      "Éplucher les fruits et les couper en morceaux, les mettre dans une casserole en ajoutant l'eau et le sucre vanillé. Laisser cuire 15 minutes en remuant régulièrement.",
     appliance: "Casserole",
     ustensils: ["couteau", "économe"],
   },
@@ -471,7 +471,7 @@ export const recipes = [
         unit: "cuillère à soupe",
       },
       {
-        ingredient: "huile d'olive",
+        ingredient: "Huile d'olive",
         quantity: 2,
         unit: "cuillère à soupe",
       },
@@ -587,7 +587,7 @@ export const recipes = [
         unit: "tiges",
       },
       {
-        ingredient: "huile d'olives",
+        ingredient: "Huile d'olives",
         quantity: 2,
         unit: "cuillère à soupe",
       },
@@ -627,7 +627,7 @@ export const recipes = [
     ],
     time: 15,
     description:
-      "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajouter un cuillière à soupe de juste de citron ainsi que les glaçons. Ajoutez quelques fueilles de menthe pour plus de fraicheur. Mixez le tout. Servir et déguster.",
+      "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajouter un cuillère à soupe de juste de citron ainsi que les glaçons. Ajoutez quelques fueilles de menthe pour plus de fraicheur. Mixez le tout. Servir et déguster.",
     appliance: "Blender",
     ustensils: ["verres", "couteau", "presse citron"],
   },
@@ -717,14 +717,14 @@ export const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "huile d'olive",
+        ingredient: "Huile d'olive",
         quantity: 1,
         unit: "cuillères à soupe",
       },
     ],
     time: 30,
     description:
-      "Faire cuire les pates comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crême fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
+      "Faire cuire les pates comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crème fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
     appliance: "Sauteuse",
     ustensils: ["râpe à fromage", "cuillère en bois"],
   },
@@ -767,7 +767,7 @@ export const recipes = [
     description:
       "Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.",
     appliance: "Casserole",
-    ustensils: ["Cuillère en bois", "louche", "couteau"],
+    ustensils: ["cuillère en bois", "louche", "couteau"],
   },
   {
     id: 22,
@@ -801,9 +801,9 @@ export const recipes = [
     ],
     time: 30,
     description:
-      "Faire fondre le chocolat et le beurre au bain marie. Dans un saladier battre les oeufs avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le moule à gateaux. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crême dessert.",
+      "Faire fondre le chocolat et le beurre au bain marie. Dans un saladier battre les oeufs avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le moule à gateaux. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crème dessert.",
     appliance: "Four",
-    ustensils: ["moule à gateaux", "fouet", "casserolle"],
+    ustensils: ["moule à gateaux", "fouet", "casserole"],
   },
   {
     id: 23,
@@ -924,7 +924,7 @@ export const recipes = [
   },
   {
     id: 26,
-    name: "Soupe de tomates",
+    name: "soupe de tomates",
     servings: 2,
     ingredients: [
       {
@@ -956,7 +956,7 @@ export const recipes = [
   },
   {
     id: 27,
-    name: "Soupe à l'oseille",
+    name: "soupe à l'oseille",
     servings: 4,
     ingredients: [
       {
@@ -985,13 +985,13 @@ export const recipes = [
     ],
     time: 15,
     description:
-      "Faire fondre l'oseille avec du beurre demi sel, ajouter un litre d'eau. Ajouter les vermicelles. Laisser cuire. une foit prêt, sortir du feu et après 5 minutes ajouter le jaune d'oeuf et la crême fraîche",
+      "Faire fondre l'oseille avec du beurre demi sel, ajouter un litre d'eau. Ajouter les vermicelles. Laisser cuire. une foit prêt, sortir du feu et après 5 minutes ajouter le jaune d'oeuf et la crème fraîche",
     appliance: "Casserole",
     ustensils: ["couteau", "cuillère en bois"],
   },
   {
     id: 28,
-    name: "Soupe de poireaux",
+    name: "soupe de poireaux",
     servings: 4,
     ingredients: [
       {
@@ -1014,7 +1014,7 @@ export const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Crême fraîche",
+        ingredient: "Crème fraîche",
         quantity: 10,
         unit: "cl",
       },
@@ -1116,7 +1116,7 @@ export const recipes = [
     description:
       "Découper en cubes les carottes et pommes de terre. Faire revenir dans du beurre. Ajouter les lardons, une fois les lardons dorés, ajouter un grand verre d'eau. Ajouter les petit poids et les haricots verts ( tous deux pré cuits ). Ajouter Sel, poivre, thyms et laurier",
     appliance: "Poële",
-    ustensils: ["Couteau", "économe"],
+    ustensils: ["couteau", "économe"],
   },
   {
     id: 32,
@@ -1158,7 +1158,7 @@ export const recipes = [
     description:
       "Beurrer les tranches de pain, ajouter entre 2 tranches de pain de mie 1 tranche d'émental, une de blanc de dinde, et une autre d'emmental. Dans un récipient, mélanger le gruyère rappé avec le lait et la noix de muscade. Mettre sur les croque monsieux. Placer au four durnat 10 minutes.",
     appliance: "Four",
-    ustensils: ["râpe à fromage", "cuillère à Soupe", "couteau"],
+    ustensils: ["râpe à fromage", "cuillère à soupe", "couteau"],
   },
   {
     id: 33,
@@ -1221,7 +1221,7 @@ export const recipes = [
     ],
     time: 25,
     description:
-      "Eplucher les patates douces et coupez les en morceaux. Les faire cuire durant 20 minute dans une casserolle d'eau bouillante. Passer au mixer en ajoutant la crème et l'huile d'olive à son gout. Salez, poivrez. Pressez l'orange et ajouter le jus à l'ensemble. Servir.",
+      "Eplucher les patates douces et coupez les en morceaux. Les faire cuire durant 20 minute dans une casserole d'eau bouillante. Passer au mixer en ajoutant la crème et l'huile d'olive à son gout. Salez, poivrez. Pressez l'orange et ajouter le jus à l'ensemble. Servir.",
     appliance: "Mixer",
     ustensils: ["couteau", "économe", "cuillère en bois"],
   },
@@ -1343,7 +1343,7 @@ export const recipes = [
     description:
       "Couper les courgettes dans le sens de la longueur. Vider les courgette dans un saladier. Réserver.Faire revenir la chair des courgettes dans 25cl d'huile d'olive. Ajouter l'oignon puis la viande hachée. Mettre la farce dans les courgettes. Ajouter le coulis de tomates. Mettre au four pendant 30 minutes. Avant la fin de la cuisson ajouter le fromage rapé",
     appliance: "Four",
-    ustensils: ["couteau", "cuillère en bois", "Poelle à frire"],
+    ustensils: ["couteau", "cuillère en bois", "poelle à frire"],
   },
   {
     id: 38,
@@ -1374,7 +1374,7 @@ export const recipes = [
     description:
       "Fouettez les oeufs, le sucre et le lait. tremper les tranches de pain. Le cuire au four pendant environ 10 minutes à 180°. Servir",
     appliance: "Four",
-    ustensils: ["fouet", "bol", "Cuillère à Soupe"],
+    ustensils: ["fouet", "bol", "cuillère à soupe"],
   },
   {
     id: 39,
@@ -1554,7 +1554,7 @@ export const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "farine",
+        ingredient: "Farine",
         quantity: 40,
         unit: "grammes",
       },
@@ -1754,7 +1754,7 @@ export const recipes = [
         quantity: 6,
       },
       {
-        ingredient: "Poudre d'amendes",
+        ingredient: "Poudre d'amandes",
         quantity: 500,
         unit: "grammes",
       },
