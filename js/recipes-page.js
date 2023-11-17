@@ -4,7 +4,6 @@ export class RecipesPage {
   constructor() {
     this.recipesContainer = document.querySelector("section");
     this.cards = [];
-
     this.allIngredients = [];
     this.allAppliances = [];
     this.allUstensils = [];
@@ -12,10 +11,8 @@ export class RecipesPage {
     this.newAllAppliances = [];
     this.newAllUstensils = [];
     this.getCreateCards();
-
     this.searchBar = document.querySelector(".search-bar");
     this.dropdownContent(this.type);
-
     this.ulIngredients = document.querySelector(".list-ingredients");
     this.ulAppliances = document.querySelector(".list-appliances");
     this.ulUstensils = document.querySelector(".list-ustensils");
@@ -38,7 +35,6 @@ export class RecipesPage {
     this.displayDropdownContent(this.allUstensils, "ustensils");
 
     // EVENT ON MAIN INPUT
-
     this.searchBar.addEventListener("keyup", (event) => {
       this.enteredLetters = event.target.value;
       if (this.enteredLetters.length < 3) {
@@ -47,23 +43,7 @@ export class RecipesPage {
         this.newDisplayRecipes(this.filteredRecipes(this.enteredLetters));
       }
     });
-
-    // EVENT ON DROPDOWNS INPUT
-
-    // this.searchDropdowns.forEach((input) => {
-    //   input.addEventListener("keyup", (event) => {
-    //     this.enteredLetters = event.target.value;
-    //     console.log(this.enteredLetters);
-    //     if (this.enteredLetters.length < 3) {
-    //       this.displayDropdownContent(this.allIngredients, "ingredients");
-    //       this.displayDropdownContent(this.allAppliances, "appliances");
-    //       this.displayDropdownContent(this.allUstensils, "ustensils");
-    //     } else {
-    //       this.newDropdownContent(this.filteredDropdowns(this.enteredLetters));
-    //     }
-    //   });
-    // });
-
+    // Events ON DROPDOWNS INPUT
     this.searchDropdownIngredients.addEventListener("keyup", (event) => {
       this.enteredLetters = event.target.value;
       if (this.enteredLetters.length >= 3) {
@@ -217,57 +197,20 @@ export class RecipesPage {
   // DISPLAY DROPDOWNS CONTENT BY ID
   displayDropdownContent(array, id) {
     let ul = document.getElementById(id);
+
     array.forEach((element) => {
       const dropdownTags = document.createElement("li");
       dropdownTags.textContent = `${element}`;
       dropdownTags.classList.add("tags");
-      dropdownTags.addEventListener("click", () => {
-        // this.searchByTagsAndMainInput(
-        //   this.cards,
-        //   this.allIngredients,
-        //   this.allAppliances,
-        //   this.allUstensils,
-        //   this.enteredLetters
-        // );
+      dropdownTags.addEventListener("click", (event) => {
+        const selectTag = event.target.innerHTML.toLowerCase();
+
+        this.newDisplayRecipes(this.searchByTags(selectTag));
       });
 
       ul.appendChild(dropdownTags);
     });
   }
-
-  // FILTER DROPDOWNS WITH INPUT
-
-  // filteredDropdowns(letters) {
-  //   let newAllIngredients = [];
-  //   let newAllAppliances = [];
-  //   let newAllUstensils = [];
-
-  //   this.allIngredients.forEach((tagIngredient) => {
-  //     let tagIngredients = tagIngredient;
-  //     if (tagIngredients.toLowerCase().includes(letters)) {
-  //       newAllIngredients.push(tagIngredient);
-  //     }
-
-  //   })
-  //   return newAllIngredients;
-  //   console.log(newAllIngredients);
-  //   this.allAppliances.forEach((tagAppliance) => {
-  //     let tagAppliances = tagAppliance;
-  //     if (tagAppliances.toLowerCase().includes(letters)) {
-  //       newAllAppliances.push(tagAppliance);
-  //       console.log(resultat);
-  //     }
-  //     return newAllAppliances;
-  //   }
-
-  //   this.allUstensils.forEach((tagUstensil) => {
-  //     let tagUstensils = tagUstensil;
-  //     if (tagUstensils.toLowerCase().includes(letters)) {
-  //       newAllUstensils.push(tagUstensil);
-  //     }
-  //   });
-  //   return newAllUstensils;
-  // }
 
   filteredDropdownsIngredients(letters) {
     let newAllIngredients = [];
@@ -303,7 +246,6 @@ export class RecipesPage {
   }
 
   // Display DROPDOWNS AFTER FILTER
-
   newDropdownContentIngredients(array) {
     this.ulIngredients.innerHTML = "";
     array.forEach((element) => {
@@ -337,6 +279,32 @@ export class RecipesPage {
     });
   }
 
+  // FILTER BY TAGS
+
+  searchByTags(click) {
+    let resultat = [];
+    this.cards.forEach((recipe) => {
+      let recipeName = recipe.name;
+      let recipeDescription = recipe.description;
+      let recipeIngredients = recipe.ingredients;
+
+      if (
+        recipeName.toLowerCase().includes(click) ||
+        recipeDescription.toLowerCase().includes(click) ||
+        recipeIngredients.forEach((ingredient) => {
+          let recipeIngredientName = ingredient.ingredient;
+          recipeIngredientName.toLowerCase().includes(click);
+        })
+      ) {
+        resultat.push(recipe);
+      }
+    });
+    console.log(resultat);
+    return resultat;
+  }
+
+  // FILTER BY TAGS AND MAIN INPUT
+
   // searchByTagsAndMainInput(
   //   cards,
   //   allIngredients,
@@ -346,7 +314,8 @@ export class RecipesPage {
   // ) {
   //   let result = [];
   //   if (letters.length > 2) {
-  //     cards.forEach((recipe) => {
+  //     console.log(cards);
+  //     this.cards.forEach((recipe) => {
   //       let recipeName = recipe.name;
   //       let recipeDescription = recipe.description;
   //       let recipeIngredients = recipe.ingredients;
