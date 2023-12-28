@@ -17,6 +17,9 @@ export class RecipesPage {
     this.getCreateCards();
     this.searchBar = document.querySelector(".search-bar");
     this.textSearch = "";
+    this.searchIngredient = "";
+
+    this.tagsContainer = document.querySelector(".tags-container");
 
     this.dropdownContent(this.type);
     this.ulIngredients = document.querySelector(".list-ingredients");
@@ -32,6 +35,18 @@ export class RecipesPage {
     this.searchDropdownUstensils = document.querySelector(
       ".dropdown-ustensils"
     );
+
+    // this.searchDropdownIngredients.addEventListener("keyup", (event) => {
+    //   this.searchIngredient = event.target.value.toLowerCase();
+    //   console.log(this.searchIngredient);
+
+    //   for (let ingredient of this.allIngredients) {
+    //     if (!ingredient.includes(this.searchIngredient)) {
+    //       ingredient.style.display = "none";
+    //     }
+    //   }
+    //   console.log(this.allIngredients);
+    // });
 
     this.dropdownOpen();
 
@@ -96,12 +111,14 @@ export class RecipesPage {
       }
     });
 
-    this.selectedTags = document
-      .querySelectorAll(".tags")
+    this.selectedTagsIngredients = document
+      .querySelectorAll(".tagsIngredients")
       .forEach((element) => {
         element.addEventListener("click", (e) => {
           // element.remove();
-          element.style.transform = "translateY(-10000px)";
+          // element.style.transform = "translateY(-100px)";
+          element.style.backgroundColor = "#3282f7";
+          element.classList.add("tagClicked");
         });
       });
   }
@@ -384,7 +401,6 @@ export class RecipesPage {
 
       dropdownIngredients.addEventListener("click", (event) => {
         const selectIngredient = event.target.innerHTML.toLowerCase();
-
         this.choicesIngredients.push(selectIngredient);
 
         this.newDisplayRecipes(
@@ -396,6 +412,11 @@ export class RecipesPage {
             this.choicesUstensils
           )
         );
+
+        const tagLi = document.createElement("li");
+        tagLi.textContent = `${selectIngredient}`;
+        tagLi.classList.add("ingredient-tag");
+        this.tagsContainer.appendChild(tagLi);
       });
 
       ulIngredients.appendChild(dropdownIngredients);
@@ -423,6 +444,11 @@ export class RecipesPage {
             this.choicesUstensils
           )
         );
+
+        const tagLi = document.createElement("li");
+        tagLi.textContent = `${selectAppliance}`;
+        tagLi.classList.add("appliance-tag");
+        this.tagsContainer.appendChild(tagLi);
       });
 
       ulAppliances.appendChild(dropdownAppliances);
@@ -439,7 +465,6 @@ export class RecipesPage {
         const selectUstensil = event.target.innerHTML.toLowerCase();
 
         this.choicesUstensils.push(selectUstensil);
-        console.log(this.choicesUstensils);
 
         this.newDisplayRecipes(
           this.algoFilter(
@@ -450,6 +475,10 @@ export class RecipesPage {
             this.choicesUstensils
           )
         );
+        const tagLi = document.createElement("li");
+        tagLi.textContent = `${selectUstensil}`;
+        tagLi.classList.add("ustensil-tag");
+        this.tagsContainer.appendChild(tagLi);
       });
 
       ulUstensils.appendChild(dropdownUstensils);
@@ -460,6 +489,7 @@ export class RecipesPage {
     let newAllIngredients = [];
     this.allIngredients.forEach((tagIngredient) => {
       let tagIngredients = tagIngredient;
+
       if (tagIngredients.toLowerCase().includes(letters)) {
         newAllIngredients.push(tagIngredient);
       }
@@ -495,7 +525,7 @@ export class RecipesPage {
     array.forEach((element) => {
       const dropdownTags = document.createElement("li");
       dropdownTags.textContent = `${element}`;
-      dropdownTags.classList.add("tags");
+      dropdownTags.classList.add("tagsIngredients");
 
       this.ulIngredients.appendChild(dropdownTags);
     });
@@ -506,7 +536,7 @@ export class RecipesPage {
     array.forEach((element) => {
       const dropdownTags = document.createElement("li");
       dropdownTags.textContent = `${element}`;
-      dropdownTags.classList.add("tags");
+      dropdownTags.classList.add("tagsAppliances");
 
       this.ulAppliances.appendChild(dropdownTags);
     });
@@ -517,7 +547,7 @@ export class RecipesPage {
     array.forEach((element) => {
       const dropdownTags = document.createElement("li");
       dropdownTags.textContent = `${element}`;
-      dropdownTags.classList.add("tags");
+      dropdownTags.classList.add("tagsUstensils");
 
       this.ulUstensils.appendChild(dropdownTags);
     });

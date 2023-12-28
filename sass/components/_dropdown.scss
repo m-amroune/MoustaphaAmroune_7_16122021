@@ -89,3 +89,40 @@
 .dropdown-tags {
   color: #fff;
 }
+
+// selected tags
+
+.tags-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.ingredient-tag {
+  background-color: #3282f7;
+  margin-right: 5px;
+  color: #fff;
+  height: 37px;
+  width: 107px;
+  text-align: center;
+  padding: 8px;
+}
+
+.appliance-tag {
+  background-color: #68d9a4;
+  margin-right: 5px;
+  color: #fff;
+  height: 37px;
+  width: 107px;
+  text-align: center;
+  padding: 8px;
+}
+
+.ustensil-tag {
+  background-color: #ed6454;
+  margin-right: 5px;
+  color: #fff;
+  height: 37px;
+  width: 107px;
+  text-align: center;
+  padding: 8px;
+}
