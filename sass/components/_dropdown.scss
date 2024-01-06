@@ -66,28 +66,32 @@
   background-color: #3282f7;
   color: #fff;
   padding-left: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
 }
 
 .list-appliances {
   background-color: #68d9a4;
   color: #fff;
   padding-left: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1000px;
 }
 
 .list-ustensils {
   background-color: #ed6454;
   color: #fff;
   padding-left: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .show-list {
   line-height: 1.6rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
-
-.dropdown-tags {
-  color: #fff;
 }
 
 // selected tags
@@ -125,4 +129,8 @@
   width: 107px;
   text-align: center;
   padding: 8px;
+}
+
+.testing {
+  display: none;
 }
