@@ -103,7 +103,8 @@ export class RecipesPage {
   ) {
     let result = [];
     if (textSearch.length >= 3) {
-      cards.forEach((recipe) => {
+      for (let i = 0; i < cards.length; i++) {
+        let recipe = cards[i];
         let recipeName = recipe.name;
         let recipeDescription = recipe.description;
         let recipeIngredients = recipe.ingredients;
@@ -124,7 +125,7 @@ export class RecipesPage {
           result.push(recipe);
           // console.log("result search by main input :", result);
         }
-      });
+      }
       let result2 = [];
       for (let recipe of result) {
         let recipeIngredients = recipe.ingredients;
