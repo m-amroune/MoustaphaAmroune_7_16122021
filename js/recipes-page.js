@@ -10,6 +10,9 @@ export class RecipesPage {
     this.newAllIngredients = [];
     this.newAllAppliances = [];
     this.newAllUstensils = [];
+    this.ingredientsInput = "";
+    this.appliancesInput = "";
+    this.ustensilsInput = "";
     this.choices = [];
     this.choicesIngredients = [];
     this.choicesAppliances = [];
@@ -19,9 +22,7 @@ export class RecipesPage {
     this.errorSearchBar = document.querySelector("#error-searchBar");
     this.textSearch = "";
     this.searchIngredient = "";
-
-    this.tagsContainer = document.querySelector(".tags-container");
-
+    this.tagsContainer = document.querySelector(".tags-container"); // container clicked tags
     this.dropdownContent();
     this.displayDropdownContentIngredients("ingredients");
     this.displayDropdownContentAppliances("appliances");
@@ -62,38 +63,38 @@ export class RecipesPage {
     });
     // Events ON DROPDOWNS INPUT
     this.searchDropdownIngredients.addEventListener("keyup", (event) => {
-      this.enteredLetters = event.target.value;
-      if (this.enteredLetters.length >= 3) {
-        this.newDropdownContentIngredients(
-          this.filteredDropdownIngredients(this.enteredLetters)
-        );
-      } else {
-        this.ulIngredients.innerHTML = "";
-        this.displayDropdownContentIngredients("ingredients");
+      this.ingredientsSearchInput = event.target.value.toLowerCase();
+      this.ingredientsLi = this.ulIngredients.children;
+      for (let ingredient of this.ingredientsLi) {
+        if (!ingredient.innerText.includes(this.ingredientsSearchInput)) {
+          ingredient.style.display = "none";
+        } else {
+          ingredient.style.display = "flex";
+        }
       }
     });
 
     this.searchDropdownAppliances.addEventListener("keyup", (event) => {
-      this.enteredLetters = event.target.value;
-      if (this.enteredLetters.length >= 3) {
-        this.newDropdownContentAppliances(
-          this.filteredDropdownAppliances(this.enteredLetters)
-        );
-      } else {
-        this.ulAppliances.innerHTML = "";
-        this.displayDropdownContentAppliances("appliances");
+      this.appliancesSearchInput = event.target.value.toLowerCase();
+      this.appliancesLi = this.ulAppliances.children;
+      for (let appliance of this.appliancesLi) {
+        if (!appliance.innerText.includes(this.appliancesSearchInput)) {
+          appliance.style.display = "none";
+        } else {
+          appliance.style.display = "flex";
+        }
       }
     });
 
     this.searchDropdownUstensils.addEventListener("keyup", (event) => {
-      this.enteredLetters = event.target.value;
-      if (this.enteredLetters.length >= 3) {
-        this.newDropdownContentUstensils(
-          this.filteredDropdownUstensils(this.enteredLetters)
-        );
-      } else {
-        this.ulUstensils.innerHTML = "";
-        this.displayDropdownContentUstensils("ustensils");
+      this.ustensilsSearchInput = event.target.value.toLowerCase();
+      this.ustensilsLi = this.ulUstensils.children;
+      for (let ustensil of this.ustensilsLi) {
+        if (!ustensil.innerText.includes(this.ustensilsSearchInput)) {
+          ustensil.style.display = "none";
+        } else {
+          ustensil.style.display = "flex";
+        }
       }
     });
   }
@@ -177,7 +178,31 @@ export class RecipesPage {
       });
       result = [...result4];
       console.log("advanced result with input : ", result);
+      this.allIngredients = [];
+      this.allAppliances = [];
+      this.allUstensils = [];
+      result.forEach((recipe) => {
+        recipe.ingredients.forEach((ingredient) => {
+          this.allIngredients.push(ingredient.ingredient.toLowerCase());
+          this.allIngredients = [...new Set(this.allIngredients)].sort();
+        });
+
+        this.allAppliances.push(recipe.appliance.toLowerCase());
+        this.allAppliances = [...new Set(this.allAppliances)].sort();
+
+        recipe.ustensils.forEach((ustensil) => {
+          this.allUstensils.push(ustensil.toLowerCase());
+          this.allUstensils = [...new Set(this.allUstensils)].sort();
+        });
+      });
+      this.ulIngredients.innerHTML = "";
+      this.ulAppliances.innerHTML = "";
+      this.ulUstensils.innerHTML = "";
+      this.displayDropdownContentIngredients("ingredients");
+      this.displayDropdownContentAppliances("appliances");
+      this.displayDropdownContentUstensils("ustensils");
     }
+
     // if main input is empty and choicesIngredients > 0 or ... or ...
     // else results = [...recipes]
     else if (
@@ -259,6 +284,10 @@ export class RecipesPage {
       this.displayDropdownContentIngredients("ingredients");
       this.displayDropdownContentAppliances("appliances");
       this.displayDropdownContentUstensils("ustensils");
+
+      // this.newDropdownContentIngredients(
+      //   this.newDropdownContentIngredients(this.enteredLetters)
+      // );
     }
     // if no recipes
 
@@ -372,7 +401,12 @@ export class RecipesPage {
           this.choicesAppliances,
           this.choicesUstensils
         );
+
         this.newDisplayRecipes(resultatFilteredRecipes);
+        this.allIngredients = "";
+        this.newDropdownContentUstensils(
+          this.filteredDropdownUstensils(this.letters)
+        );
 
         // creation list li for clicked tagsContainer
         const tagLi = document.createElement("li");
@@ -388,7 +422,7 @@ export class RecipesPage {
     });
   }
   displayDropdownContentAppliances(id) {
-    let ulAppliances = document.getElementById(id);
+    this.ulAppliances = document.getElementById(id);
     this.allAppliances.forEach((element) => {
       const dropdownAppliances = document.createElement("li");
       dropdownAppliances.textContent = `${element}`;
@@ -420,11 +454,11 @@ export class RecipesPage {
         this.tagsContainer.appendChild(tagLi);
       });
 
-      ulAppliances.appendChild(dropdownAppliances);
+      this.ulAppliances.appendChild(dropdownAppliances);
     });
   }
   displayDropdownContentUstensils(id) {
-    let ulUstensils = document.getElementById(id);
+    this.ulUstensils = document.getElementById(id);
     this.allUstensils.forEach((element) => {
       const dropdownUstensils = document.createElement("li");
       dropdownUstensils.textContent = `${element}`;
@@ -455,111 +489,31 @@ export class RecipesPage {
         this.tagsContainer.appendChild(tagLi);
       });
 
-      ulUstensils.appendChild(dropdownUstensils);
+      this.ulUstensils.appendChild(dropdownUstensils);
     });
   }
   // FILTERS
   filteredDropdownIngredients(letters) {
-    let newAllIngredients = [];
+    let allIngredients = [];
     this.allIngredients.forEach((tagIngredient) => {
       let tagIngredients = tagIngredient;
 
       if (tagIngredients.toLowerCase().includes(letters)) {
-        newAllIngredients.push(tagIngredient);
+        allIngredients.push(tagIngredient);
       }
     });
 
-    return newAllIngredients;
+    return allIngredients;
   }
 
-  // recupérer le résultat recettes filtrées
-  // mettre le tableau allIngredients à vide
-  // appeler la fonction
-  // updateDropdownIngredients() {
-  //   let result = [];
-  //   let filteredCards = this.searchByInputAndTags(
-  //     this.cards,
-  //     this.textSearch,
-  //     this.choicesIngredients,
-  //     this.choicesAppliances,
-  //     this.choicesUstensils
-  //   );
-  //   console.log(filteredCards);
-  //   filteredCards.forEach((recipe) => {
-  //     let recipeIngredients = recipe.ingredients;
-  //     let recipeIngredientsFilteredArray = [];
-  //     recipeIngredients.map((ingredient) => {
-  //       recipeIngredientsFilteredArray.push(
-  //         ingredient.ingredient.toLowerCase()
-  //       );
-  //     });
-  //     for (let ingredientFiltered of this.allIngredients) {
-  //       if (
-  //         recipeIngredientsFilteredArray
-  //           .toString()
-  //           .toLowerCase()
-  //           .includes(ingredientFiltered)
-  //       ) {
-  //         result.push(ingredientFiltered);
-  //         result = [...new Set(result)];
-  //       }
-  //     }
-  //   });
-  //   console.log("result update tags : ", result);
-  //   return result;
-  // }
   filteredDropdownAppliances(letters) {
-    let newAllAppliances = [];
+    let allAppliances = [];
     this.allAppliances.forEach((tagAppliance) => {
       let tagAppliances = tagAppliance;
       if (tagAppliances.toLowerCase().includes(letters)) {
-        newAllAppliances.push(tagAppliance);
+        allAppliances.push(tagAppliance);
       }
     });
-    return newAllAppliances;
-  }
-
-  filteredDropdownUstensils(letters) {
-    let newAllUstensils = [];
-    this.allUstensils.forEach((tagUstensil) => {
-      let tagUstensils = tagUstensil;
-      if (tagUstensils.toLowerCase().includes(letters)) {
-        newAllUstensils.push(tagUstensils);
-      }
-    });
-    return newAllUstensils;
-  }
-
-  // Display DROPDOWNS AFTER FILTER
-  newDropdownContentIngredients(array) {
-    this.ulIngredients.innerHTML = "";
-    array.forEach((element) => {
-      const dropdownTags = document.createElement("li");
-      dropdownTags.textContent = `${element}`;
-      dropdownTags.classList.add("tagsIngredients");
-      this.ulIngredients.appendChild(dropdownTags);
-    });
-  }
-
-  newDropdownContentAppliances(array) {
-    this.ulAppliances.innerHTML = "";
-    array.forEach((element) => {
-      const dropdownTags = document.createElement("li");
-      dropdownTags.textContent = `${element}`;
-      dropdownTags.classList.add("tagsAppliances");
-
-      this.ulAppliances.appendChild(dropdownTags);
-    });
-  }
-
-  newDropdownContentUstensils(array) {
-    this.ulUstensils.innerHTML = "";
-    array.forEach((element) => {
-      const dropdownTags = document.createElement("li");
-      dropdownTags.textContent = `${element}`;
-      dropdownTags.classList.add("tagsUstensils");
-
-      this.ulUstensils.appendChild(dropdownTags);
-    });
+    return allAppliances;
   }
 }
