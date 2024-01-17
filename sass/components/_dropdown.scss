@@ -69,6 +69,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .list-appliances {

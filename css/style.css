@@ -129,6 +129,11 @@ img {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
 }
+@media (max-width: 680px) {
+  .list-ingredients {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 .list-appliances {
   background-color: #68d9a4;
@@ -290,7 +295,7 @@ article {
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "img img img img" "title title title duration" "ingredients ingredients instructions instructions";
 }
-@media (max-width: 795px) {
+@media (max-width: 770px) {
   article {
     margin-right: 0;
   }

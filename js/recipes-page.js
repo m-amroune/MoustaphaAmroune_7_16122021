@@ -7,9 +7,6 @@ export class RecipesPage {
     this.allIngredients = [];
     this.allAppliances = [];
     this.allUstensils = [];
-    this.newAllIngredients = [];
-    this.newAllAppliances = [];
-    this.newAllUstensils = [];
     this.ingredientsInput = "";
     this.appliancesInput = "";
     this.ustensilsInput = "";
@@ -23,6 +20,7 @@ export class RecipesPage {
     this.textSearch = "";
     this.searchIngredient = "";
     this.tagsContainer = document.querySelector(".tags-container"); // container clicked tags
+    this.tagsSelected = this.tagsContainer.children;
     this.dropdownContent();
     this.displayDropdownContentIngredients("ingredients");
     this.displayDropdownContentAppliances("appliances");
@@ -59,6 +57,14 @@ export class RecipesPage {
       } else {
         this.recipesContainer.innerHTML = "";
         this.displayRecipes();
+        let resultatFilteredRecipes = this.searchByInputAndTags(
+          this.cards,
+          this.textSearch,
+          this.choicesIngredients,
+          this.choicesAppliances,
+          this.choicesUstensils
+        );
+        this.newDisplayRecipes(resultatFilteredRecipes);
       }
     });
     // Events ON DROPDOWNS INPUT
@@ -284,11 +290,8 @@ export class RecipesPage {
       this.displayDropdownContentIngredients("ingredients");
       this.displayDropdownContentAppliances("appliances");
       this.displayDropdownContentUstensils("ustensils");
-
-      // this.newDropdownContentIngredients(
-      //   this.newDropdownContentIngredients(this.enteredLetters)
-      // );
     }
+
     // if no recipes
 
     if (result.length === 0) {
@@ -403,10 +406,6 @@ export class RecipesPage {
         );
 
         this.newDisplayRecipes(resultatFilteredRecipes);
-        this.allIngredients = "";
-        this.newDropdownContentUstensils(
-          this.filteredDropdownUstensils(this.letters)
-        );
 
         // creation list li for clicked tagsContainer
         const tagLi = document.createElement("li");
@@ -417,6 +416,34 @@ export class RecipesPage {
         iconLi.classList.add("far");
         iconLi.classList.add("fa-times-circle");
         tagLi.appendChild(iconLi);
+
+        // delete tag from tagsContainer
+
+        for (let tagSelected of this.tagsSelected) {
+          let closeButton = tagSelected.children.item(0);
+          closeButton.addEventListener("click", () => {
+            tagSelected.classList.remove("ingredient-tag");
+            tagSelected.style.display = "none";
+            let tagIndex = this.choicesIngredients.indexOf(
+              tagSelected.innerText
+            );
+            this.choicesIngredients.splice(tagIndex, 1);
+            this.displayDropdownContentIngredients("ingredients");
+            let resultatFilteredRecipes = this.searchByInputAndTags(
+              this.cards,
+              this.textSearch,
+              this.choicesIngredients,
+              this.choicesAppliances,
+              this.choicesUstensils
+            );
+
+            this.newDisplayRecipes(resultatFilteredRecipes);
+            this.ulIngredients.innerHTML = "";
+            this.displayDropdownContentIngredients("ingredients");
+            // this.dropdownContent();
+            // this.displayRecipes();
+          });
+        }
       });
       this.ulIngredients.appendChild(dropdownIngredients);
     });
@@ -491,29 +518,5 @@ export class RecipesPage {
 
       this.ulUstensils.appendChild(dropdownUstensils);
     });
-  }
-  // FILTERS
-  filteredDropdownIngredients(letters) {
-    let allIngredients = [];
-    this.allIngredients.forEach((tagIngredient) => {
-      let tagIngredients = tagIngredient;
-
-      if (tagIngredients.toLowerCase().includes(letters)) {
-        allIngredients.push(tagIngredient);
-      }
-    });
-
-    return allIngredients;
-  }
-
-  filteredDropdownAppliances(letters) {
-    let allAppliances = [];
-    this.allAppliances.forEach((tagAppliance) => {
-      let tagAppliances = tagAppliance;
-      if (tagAppliances.toLowerCase().includes(letters)) {
-        allAppliances.push(tagAppliance);
-      }
-    });
-    return allAppliances;
   }
 }
