@@ -59,12 +59,14 @@ img {
   margin-top: 10px;
   margin-bottom: 40px;
 }
+
 @media (max-width: 680px) {
   .dropdowns {
     flex-direction: column;
     align-items: center;
   }
 }
+
 .dropdowns input {
   outline: none;
   height: 69px;
@@ -72,11 +74,13 @@ img {
   border-radius: 5px;
   color: #fff;
 }
+
 @media (max-width: 680px) {
   .dropdowns input {
     width: 100%;
   }
 }
+
 .dropdowns input::placeholder {
   padding-left: 26px;
 }
@@ -86,6 +90,7 @@ img {
   position: relative;
   margin-bottom: 10px;
 }
+
 @media (max-width: 680px) {
   .dropdown {
     display: block;
@@ -133,6 +138,7 @@ img {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
 }
+
 @media (max-width: 1100px) {
   .list-ingredients {
     grid-template-columns: 1fr 1fr;
@@ -147,6 +153,7 @@ img {
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 1000px;
 }
+
 @media (max-width: 1100px) {
   .list-appliances {
     grid-template-columns: 1fr 1fr;
@@ -160,6 +167,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 @media (max-width: 1100px) {
   .list-ustensils {
     grid-template-columns: 1fr 1fr;
@@ -267,6 +275,7 @@ button {
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
+
 button span {
   width: 32px;
   font-size: 32px;
@@ -283,6 +292,7 @@ button span {
   right: 0;
   background: rgba(0, 0, 0, 0);
 }
+
 .btn-dropdown span {
   color: #fff;
   font-size: 16px;
@@ -293,6 +303,7 @@ section {
   flex-flow: row wrap;
   margin-top: 40px;
 }
+
 @media (max-width: 1430px) {
   section {
     justify-content: center;
@@ -310,13 +321,15 @@ article {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "img img img img" "title title title duration" "ingredients ingredients instructions instructions";
+  grid-template-areas: "img img img img" "title title title duration" "ingredients ingredients instructions instructions";
 }
+
 @media (max-width: 680px) {
   article {
     margin-right: 0;
   }
 }
+
 article .card-img {
   width: 100%;
   height: 178px;
@@ -342,6 +355,7 @@ article .card-img {
   padding: 20px 20px 0 0;
   white-space: nowrap;
 }
+
 .duration i {
   width: 20px;
   height: 20px;
@@ -354,6 +368,7 @@ article .card-img {
   padding: 0 0 19px 20px;
   width: 171px;
 }
+
 .ingredients-list li span {
   font-weight: bold;
 }
@@ -368,7 +383,6 @@ article .card-img {
   font-size: 12px;
   line-height: 16px;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 7;
 }
 
@@ -382,6 +396,7 @@ body {
   margin-left: 100px;
   padding: 10px;
 }
+
 @media (max-width: 1200px) {
   body {
     margin: 0;
@@ -390,5 +405,4 @@ body {
     align-items: center;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

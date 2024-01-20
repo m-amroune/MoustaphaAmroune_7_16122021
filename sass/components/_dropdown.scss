@@ -1,6 +1,7 @@
 .dropdowns {
   display: flex;
   margin-top: 10px;
+  margin-bottom: 40px;
 
   @media (max-width: 680px) {
     flex-direction: column;
@@ -27,14 +28,18 @@
 .dropdown {
   margin-right: 15px;
   position: relative;
-  z-index: 10;
+  // z-index: 10;
+  margin-bottom: 10px;
 
   @media (max-width: 680px) {
     display: block;
     margin-bottom: 10px;
-    min-width: 100%;
     margin-left: 15px;
   }
+}
+
+.dropdown-tags {
+  max-width: 796px;
 }
 
 .dropdown-ingredients {
@@ -69,6 +74,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .list-appliances {
@@ -78,6 +86,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 1000px;
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .list-ustensils {
@@ -86,6 +97,9 @@
   padding-left: 26px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .show-list {
@@ -99,38 +113,56 @@
 .tags-container {
   display: flex;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .ingredient-tag {
   background-color: #3282f7;
+  border-radius: 5px;
   margin-right: 5px;
+  margin-top: 2px;
   color: #fff;
   height: 37px;
-  width: 107px;
+  min-width: 107px;
   text-align: center;
   padding: 8px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .appliance-tag {
   background-color: #68d9a4;
+  border-radius: 5px;
   margin-right: 5px;
   color: #fff;
   height: 37px;
-  width: 107px;
+  min-width: 107px;
   text-align: center;
   padding: 8px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .ustensil-tag {
   background-color: #ed6454;
+  border-radius: 5px;
   margin-right: 5px;
   color: #fff;
   height: 37px;
-  width: 107px;
+  min-width: 107px;
   text-align: center;
   padding: 8px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .testing {
   display: none;
+}
+
+.fa-times-circle {
+  color: white;
+  padding-top: 2px;
+  padding-left: 5px;
+  font-size: 18px;
 }
