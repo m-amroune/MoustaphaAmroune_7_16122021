@@ -105,7 +105,7 @@ export class RecipesPage {
     choicesUstensils
   ) {
     let result = [];
-    // avant de fermer l'acc
+
     if (textSearch.length >= 3) {
       cards.forEach((recipe) => {
         let recipeName = recipe.name;
@@ -130,7 +130,7 @@ export class RecipesPage {
     } else {
       result = [...cards];
     }
-    // fermer le if
+
     let result2 = [];
     if (choicesIngredients.length > 0) {
       for (let recipe of result) {
@@ -330,7 +330,6 @@ export class RecipesPage {
           this.choicesAppliances,
           this.choicesUstensils
         );
-
         this.newDisplayRecipes(resultatFilteredRecipes);
 
         // creation list li for clicked tagsContainer
@@ -364,9 +363,6 @@ export class RecipesPage {
             );
 
             this.newDisplayRecipes(resultatFilteredRecipes);
-            this.displayRecipes();
-            // this.ulIngredients.innerHTML = "";
-            // this.displayDropdownContentIngredients("ingredients");
           });
         }
       });
@@ -425,8 +421,6 @@ export class RecipesPage {
             );
 
             this.newDisplayRecipes(resultatFilteredRecipes);
-            this.ulAppliances.innerHTML = "";
-            this.displayDropdownContentAppliances("appliances");
           });
         }
       });
@@ -483,8 +477,6 @@ export class RecipesPage {
             );
 
             this.newDisplayRecipes(resultatFilteredRecipes);
-            this.ulUstensils.innerHTML = "";
-            this.displayDropdownContentUstensils("ustensils");
           });
         }
       });
