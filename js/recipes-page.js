@@ -71,7 +71,6 @@ export class RecipesPage {
         }
       }
     });
-
     this.searchDropdownAppliances.addEventListener("keyup", (event) => {
       this.appliancesSearchInput = event.target.value.toLowerCase();
       this.appliancesLi = this.ulAppliances.children;
@@ -83,7 +82,6 @@ export class RecipesPage {
         }
       }
     });
-
     this.searchDropdownUstensils.addEventListener("keyup", (event) => {
       this.ustensilsSearchInput = event.target.value.toLowerCase();
       this.ustensilsLi = this.ulUstensils.children;
@@ -105,7 +103,6 @@ export class RecipesPage {
     choicesUstensils
   ) {
     let result = [];
-
     if (textSearch.length >= 3) {
       for (let i = 0; i < cards.length; i++) {
         let recipe = cards[i];
@@ -113,9 +110,10 @@ export class RecipesPage {
         let recipeDescription = recipe.description;
         let recipeIngredients = recipe.ingredients;
         let recipeIngredientsArray = [];
-        recipeIngredients.map((ingredient) => {
+        for (let i = 0; i < recipeIngredients.length; i++) {
+          let ingredient = recipeIngredients[i];
           recipeIngredientsArray.push(ingredient.ingredient.toLowerCase());
-        });
+        }
         if (
           recipeName.toLowerCase().includes(textSearch.toLowerCase()) ||
           recipeDescription.toLowerCase().includes(textSearch.toLowerCase()) ||
@@ -125,20 +123,13 @@ export class RecipesPage {
             .includes(textSearch.toLowerCase())
         ) {
           result.push(recipe);
-          // console.log("result search by main input :", result);
         }
-<<<<<<< HEAD
       }
-      let result2 = [];
-=======
-      });
     } else {
       result = [...cards];
     }
-
     let result2 = [];
     if (choicesIngredients.length > 0) {
->>>>>>> main
       for (let recipe of result) {
         let recipeIngredients = recipe.ingredients;
         let recipeIngredientsArray = [];
@@ -152,13 +143,11 @@ export class RecipesPage {
           )
         ) {
           result2.push(recipe);
-          // console.log("result search by ingredient :", result2);
         }
       }
     } else {
       result2 = [...result];
     }
-
     result = [...result2];
     let result3 = [];
     if (choicesAppliances.length > 0) {
@@ -170,13 +159,11 @@ export class RecipesPage {
           choicesAppliances.every((tag) => recipeAppliancesArray.includes(tag))
         ) {
           result3.push(recipe);
-          // console.log("result search by appliances : ", result3);
         }
       }
     } else {
       result3 = [...result];
     }
-
     result = [...result3];
     let result4 = [];
     if (choicesUstensils.length > 0) {
@@ -192,15 +179,14 @@ export class RecipesPage {
           )
         ) {
           result4.push(recipe);
-          // console.log("result search by ustensil :", result4);
         }
       });
     } else {
       result4 = [...result];
     }
-
     result = [...result4];
-    console.log("advanced result with input : ", result);
+    // console.log("advanced result with input : ", result);
+    // update list tags
     this.allIngredients = [];
     this.allAppliances = [];
     this.allUstensils = [];
@@ -245,7 +231,6 @@ export class RecipesPage {
       let dropdownTags;
       input.addEventListener("focusin", function () {
         let nextElement = input;
-
         while (nextElement) {
           nextElement = nextElement.nextElementSibling;
           if (nextElement.classList.contains("dropdown-tags")) {
@@ -292,7 +277,6 @@ export class RecipesPage {
   }
 
   // NEW ARRAY
-
   newDisplayRecipes(array) {
     this.recipesContainer.innerHTML = "";
     array.forEach((recipe) => {
@@ -301,17 +285,14 @@ export class RecipesPage {
   }
 
   // ADD TAGS BY TYPE IN EACH ARRAY (ingredients, appliances, ustensils)
-
   dropdownContent() {
     recipes.forEach((recipe) => {
       recipe.ingredients.forEach((ingredient) => {
         this.allIngredients.push(ingredient.ingredient.toLowerCase());
         this.allIngredients = [...new Set(this.allIngredients)].sort();
       });
-
       this.allAppliances.push(recipe.appliance.toLowerCase());
       this.allAppliances = [...new Set(this.allAppliances)].sort();
-
       recipe.ustensils.forEach((ustensil) => {
         this.allUstensils.push(ustensil.toLowerCase());
         this.allUstensils = [...new Set(this.allUstensils)].sort();
@@ -328,7 +309,6 @@ export class RecipesPage {
       dropdownIngredients.addEventListener("click", (event) => {
         const selectIngredient = event.target.innerHTML.toLowerCase();
         this.choicesIngredients.push(selectIngredient);
-
         let resultatFilteredRecipes = this.searchByInputAndTags(
           this.cards,
           this.textSearch,
@@ -367,7 +347,6 @@ export class RecipesPage {
               this.choicesAppliances,
               this.choicesUstensils
             );
-
             this.newDisplayRecipes(resultatFilteredRecipes);
           });
         }
@@ -381,13 +360,9 @@ export class RecipesPage {
       const dropdownAppliances = document.createElement("li");
       dropdownAppliances.textContent = `${element}`;
       dropdownAppliances.classList.add("tagsAppliances");
-
       dropdownAppliances.addEventListener("click", (event) => {
         const selectAppliance = event.target.innerHTML.toLowerCase();
-
         this.choicesAppliances.push(selectAppliance);
-        console.log(this.choicesAppliances);
-
         let resultatFilteredRecipes = this.searchByInputAndTags(
           this.cards,
           this.textSearch,
@@ -425,12 +400,10 @@ export class RecipesPage {
               this.choicesAppliances,
               this.choicesUstensils
             );
-
             this.newDisplayRecipes(resultatFilteredRecipes);
           });
         }
       });
-
       this.ulAppliances.appendChild(dropdownAppliances);
     });
   }
@@ -443,9 +416,7 @@ export class RecipesPage {
 
       dropdownUstensils.addEventListener("click", (event) => {
         const selectUstensil = event.target.innerHTML.toLowerCase();
-
         this.choicesUstensils.push(selectUstensil);
-
         let resultatFilteredRecipes = this.searchByInputAndTags(
           this.cards,
           this.textSearch,
@@ -486,7 +457,6 @@ export class RecipesPage {
           });
         }
       });
-
       this.ulUstensils.appendChild(dropdownUstensils);
     });
   }
