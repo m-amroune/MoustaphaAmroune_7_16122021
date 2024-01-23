@@ -131,7 +131,7 @@ export class RecipesPage {
       result = [...cards];
     }
 
-    let result2 = [];
+    let resultIngredientsFiltered = [];
     if (choicesIngredients.length > 0) {
       for (let recipe of result) {
         let recipeIngredients = recipe.ingredients;
@@ -145,16 +145,16 @@ export class RecipesPage {
             recipeIngredientsArray.includes(recipe)
           )
         ) {
-          result2.push(recipe);
+          resultIngredientsFiltered.push(recipe);
           // console.log("result search by ingredient :", result2);
         }
       }
     } else {
-      result2 = [...result];
+      resultIngredientsFiltered = [...result];
     }
 
-    result = [...result2];
-    let result3 = [];
+    result = [...resultIngredientsFiltered];
+    let resultAppliancesFiltered = [];
     if (choicesAppliances.length > 0) {
       for (let recipe of result) {
         let recipeAppliance = recipe.appliance;
@@ -163,16 +163,16 @@ export class RecipesPage {
         if (
           choicesAppliances.every((tag) => recipeAppliancesArray.includes(tag))
         ) {
-          result3.push(recipe);
+          resultAppliancesFiltered.push(recipe);
           // console.log("result search by appliances : ", result3);
         }
       }
     } else {
-      result3 = [...result];
+      resultAppliancesFiltered = [...result];
     }
 
-    result = [...result3];
-    let result4 = [];
+    result = [...resultAppliancesFiltered];
+    let resultUstensilsFiltered = [];
     if (choicesUstensils.length > 0) {
       result.map((recipe) => {
         let recipeUstensils = recipe.ustensils;
@@ -185,15 +185,15 @@ export class RecipesPage {
             recipeUstensilsArray.includes(recipe)
           )
         ) {
-          result4.push(recipe);
+          resultUstensilsFiltered.push(recipe);
           // console.log("result search by ustensil :", result4);
         }
       });
     } else {
-      result4 = [...result];
+      resultUstensilsFiltered = [...result];
     }
 
-    result = [...result4];
+    result = [...resultUstensilsFiltered];
     console.log("advanced result with input : ", result);
     this.allIngredients = [];
     this.allAppliances = [];
