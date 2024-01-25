@@ -158,7 +158,6 @@ export class RecipesPage {
           choicesAppliances.every((tag) => recipeAppliancesArray.includes(tag))
         ) {
           resultAppliancesFiltered.push(recipe);
-          // console.log("result search by appliances : ", result3);
         }
       }
     } else {
@@ -180,7 +179,6 @@ export class RecipesPage {
           )
         ) {
           resultUstensilsFiltered.push(recipe);
-          // console.log("result search by ustensil :", result4);
         }
       });
     } else {
