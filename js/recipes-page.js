@@ -7,10 +7,6 @@ export class RecipesPage {
     this.allIngredients = [];
     this.allAppliances = [];
     this.allUstensils = [];
-    this.ingredientsInput = "";
-    this.appliancesInput = "";
-    this.ustensilsInput = "";
-    this.choices = [];
     this.choicesIngredients = [];
     this.choicesAppliances = [];
     this.choicesUstensils = [];
@@ -18,7 +14,6 @@ export class RecipesPage {
     this.searchBar = document.querySelector(".search-bar");
     this.messageError = document.querySelector("#error-searchBar");
     this.textSearch = "";
-    this.searchIngredient = "";
     this.tagsContainer = document.querySelector(".tags-container"); // container clicked tags
     this.tagsSelected = this.tagsContainer.children;
     this.dropdownContent();
@@ -105,9 +100,10 @@ export class RecipesPage {
     choicesUstensils
   ) {
     let result = [];
-
+    // if user enters at least 3 characteres
     if (textSearch.length >= 3) {
       cards.forEach((recipe) => {
+        // loop on cards array
         let recipeName = recipe.name;
         let recipeDescription = recipe.description;
         let recipeIngredients = recipe.ingredients;
@@ -123,15 +119,14 @@ export class RecipesPage {
             .toLowerCase()
             .includes(textSearch.toLowerCase())
         ) {
-          result.push(recipe);
-          // console.log("result search by main input :", result);
+          result.push(recipe); // if match
         }
       });
     } else {
-      result = [...cards];
+      result = [...cards]; // if no match
     }
 
-    let resultIngredientsFiltered = [];
+    let resultIngredientsFiltered = []; // new array
     if (choicesIngredients.length > 0) {
       for (let recipe of result) {
         let recipeIngredients = recipe.ingredients;
@@ -145,12 +140,11 @@ export class RecipesPage {
             recipeIngredientsArray.includes(recipe)
           )
         ) {
-          resultIngredientsFiltered.push(recipe);
-          // console.log("result search by ingredient :", result2);
+          resultIngredientsFiltered.push(recipe); // if match
         }
       }
     } else {
-      resultIngredientsFiltered = [...result];
+      resultIngredientsFiltered = [...result]; // if no match
     }
 
     result = [...resultIngredientsFiltered];
@@ -194,7 +188,6 @@ export class RecipesPage {
     }
 
     result = [...resultUstensilsFiltered];
-    console.log("advanced result with input : ", result);
     this.allIngredients = [];
     this.allAppliances = [];
     this.allUstensils = [];
@@ -322,7 +315,6 @@ export class RecipesPage {
       dropdownIngredients.addEventListener("click", (event) => {
         const selectIngredient = event.target.innerHTML.toLowerCase();
         this.choicesIngredients.push(selectIngredient);
-
         let resultatFilteredRecipes = this.searchByInputAndTags(
           this.cards,
           this.textSearch,
@@ -331,7 +323,6 @@ export class RecipesPage {
           this.choicesUstensils
         );
         this.newDisplayRecipes(resultatFilteredRecipes);
-
         // creation list li for clicked tagsContainer
         const tagLi = document.createElement("li");
         tagLi.textContent = `${selectIngredient}`;
@@ -341,9 +332,7 @@ export class RecipesPage {
         iconLi.classList.add("far");
         iconLi.classList.add("fa-times-circle");
         tagLi.appendChild(iconLi);
-
         // delete tag from tagsContainer
-
         for (let tagSelected of this.tagsSelected) {
           let closeButton = tagSelected.children.item(0);
           closeButton.addEventListener("click", () => {
@@ -361,7 +350,6 @@ export class RecipesPage {
               this.choicesAppliances,
               this.choicesUstensils
             );
-
             this.newDisplayRecipes(resultatFilteredRecipes);
           });
         }
@@ -419,7 +407,6 @@ export class RecipesPage {
               this.choicesAppliances,
               this.choicesUstensils
             );
-
             this.newDisplayRecipes(resultatFilteredRecipes);
           });
         }
@@ -437,9 +424,7 @@ export class RecipesPage {
 
       dropdownUstensils.addEventListener("click", (event) => {
         const selectUstensil = event.target.innerHTML.toLowerCase();
-
         this.choicesUstensils.push(selectUstensil);
-
         let resultatFilteredRecipes = this.searchByInputAndTags(
           this.cards,
           this.textSearch,
@@ -480,7 +465,6 @@ export class RecipesPage {
           });
         }
       });
-
       this.ulUstensils.appendChild(dropdownUstensils);
     });
   }
