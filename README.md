@@ -1,4 +1,11 @@
-Projet 7 : Développez un algorithme de recherche en JavaScript
+# Les petits plats
+
+Projet formation OpenClassrooms : Développez un algorithme de recherche en JavaScript
+
+## Skills
+
+- Analyse a computer problem
+- Develop an algorithm to solve a problem
 
 ## Languages and Technologie
 
